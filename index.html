@@ -4,27 +4,15 @@
     <title>Yu's Library</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link href="style.css" rel="stylesheet"> -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="script.js" defer></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              raleway: ['Raleway'],
-            }
-          }
-        }
-      }
-    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.css" />
+    <link rel="stylesheet" href="./dist/style.css">
+    <script src="script.js" defer></script>
   </head>
 
-  <body class="font-raleway overflow-x-hidden bg-[#eee]">
+  <body class="font-raleway overflow-x-hidden bg-[#eee] text-[#191919] dark:bg-[#191919] dark:text-[#d4d4d4]">
     <main class="grid grid-cols-1 grid-rows-[15rem_1fr] place-items-center h-screen ">
       <div class="w-full h-full bg-blue-200">
         <img src="assets/lib-head.png" alt="" class="h-full w-full object-cover">
@@ -37,15 +25,15 @@
           <div class="flex justify-center">
             <input type="checkbox" id="toggle" class="hidden"/>
             <label for="toggle">
-              <div class="w-11 h-6 bg-black dark:bg-offWhite rounded-full flex items-center p-1 cursor-pointer">
-                <div class="toggle-circle w-4 h-4 bg-white dark:bg-black rounded-full transition duration-300 ease-in-out"></div> <!-- toggle circle here is a custom class/not exist in tailwind -->
+              <div class="w-11 h-6 bg-black dark:bg-[#f5f5f7] rounded-full flex items-center p-1 cursor-pointer">
+                <div class="toggle-circle w-4 h-4 bg-[#f5f5f7] dark:bg-black rounded-full transition duration-300 ease-in-out"></div> <!-- toggle circle here is a custom class/not exist in tailwind -->
               </div>
             </label>
           </div>
         </div>
 
         <header class="flex flex-col gap-4 h-full mb-10">
-          <h1 class="flex flex-row items-center font-semibold text-[#232323] text-4xl"><span class="sm:mr-4 md:mr-0"><img src="assets/lib-icon.png" alt="library-icon" class="object-cover w-28 h-28"></span>・ Yusei's Library  ⸝ ⸝</h1>
+          <h1 class="flex flex-row items-center font-semibold text-[#232323] dark:text-white text-4xl"><span class="sm:mr-4 md:mr-0"><img src="assets/lib-icon.png" alt="library-icon" class="object-cover w-28 h-28"></span>・ Yusei's Library  ⸝ ⸝</h1>
           <p class="">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet ratione debitis nesciunt. Architecto assumenda quaerat maiores ex aperiam dolorum itaque nobis, consectetur iure atque error similique eos ad nemo voluptatem!</p>
         </header>
 
