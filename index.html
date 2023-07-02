@@ -1,34 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
-    <title>library</title>
+    <title>Yu's Library</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="style.css" rel="stylesheet">
+    <!-- <link href="style.css" rel="stylesheet"> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              raleway: ['Raleway'],
+            }
+          }
+        }
+      }
+    </script>
   </head>
-  <body>
-    <main class="container">
-      <header class="head">
-        <h2>Book Library</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis necessitatibus fugit autem, nesciunt reiciendis dolorem neque blanditiis odio animi ab!</p>
-      </header>
-      <div class="data-submit">
-        <div class="input-data">
-          <label for="name">Book</label>
-          <input type="text" class="full-width" id="name">
+
+  <body class="font-raleway overflow-x-hidden bg-[#eee]">
+    <main class="grid grid-cols-1 grid-rows-[15rem_1fr] place-items-center h-screen ">
+      <div class="w-full h-full bg-blue-200">
+        <img src="assets/lib-head.png" alt="" class="h-full w-full object-cover">
+      </div>
+
+      <!-- main page -->
+      <div class="flex flex-col items-center justify-center h-full w-9/12 relative mt-16">
+        <!-- dark/light mode toggle -->
+        <div class="absolute text-6xl top-3 right-0">
+          <div class="flex justify-center">
+            <input type="checkbox" id="toggle" class="hidden"/>
+            <label for="toggle">
+              <div class="w-11 h-6 bg-black dark:bg-offWhite rounded-full flex items-center p-1 cursor-pointer">
+                <div class="toggle-circle w-4 h-4 bg-white dark:bg-black rounded-full transition duration-300 ease-in-out"></div> <!-- toggle circle here is a custom class/not exist in tailwind -->
+              </div>
+            </label>
+          </div>
         </div>
-        <div class="input-data">
-          <label for="author">Author</label>
-          <input type="text" class="full-width" id="author">
-        </div>
-        <div class="input-data">
-          <label for="status">Status</label>
-          <select name="status" id="status" class="full-width">
-            <option value="read">Read</option>
-            <option value="not read">Not read</option>
-          </select>
+
+        <header class="flex flex-col gap-4 h-full mb-10">
+          <h1 class="flex flex-row items-center font-semibold text-[#232323] text-4xl"><span class="sm:mr-4 md:mr-0"><img src="assets/lib-icon.png" alt="library-icon" class="object-cover w-28 h-28"></span>・ Yusei's Library  ⸝ ⸝</h1>
+          <p class="">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet ratione debitis nesciunt. Architecto assumenda quaerat maiores ex aperiam dolorum itaque nobis, consectetur iure atque error similique eos ad nemo voluptatem!</p>
+        </header>
+
+        <form action="" class="grid grid-cols-[1fr_1fr_0.75fr] grid-rows-2 gap-x-6 w-full h-full">
+          <div class="flex flex-col gap-2">
+            <label for="name" class="font-semibold">Book</label>
+            <input type="text" class="h-8 w-full pl-3 border border-[#d1d1d1] rounded-md bg-transparent focus:outline-black" id="name">
+          </div>
+          <div class="flex flex-col gap-2">
+            <label for="author" class="font-semibold">Author</label>
+            <input type="text" class="h-8 w-full pl-3 border border-[#d1d1d1] rounded-md bg-transparent focus:outline-black" id="author">
+          </div>
+          <div class="flex flex-col gap-2">
+            <label for="status" class="font-semibold">Status</label>
+            <select name="status" class="h-8 w-full pl-3 border border-[#d1d1d1] rounded-md bg-transparent focus:outline-black" id="status">
+              <option value="read">Read</option>
+              <option value="not read">Not read</option>
+            </select>
+          </div>
+          <input type="submit" value="SUBMIT" class="h-fit w-fit border-none rounded-md text-white bg-[#d1d1d1] hover:bg-[#232323] px-8 py-2 transition duration-300">
+        </form>
+
+        <div class="w-full h-full">
+          <table class="border-collapse my-6 w-full overflow-hidden">
+            <thead class="text-md">
+              <tr class="text-left font-semibold border-b border-[#d1d1d1]">
+                <th class="py-4">Name</th>
+                <th class="py-4">Author</th>
+                <th class="py-4">Status</th>
+                <th class="py-4"></th>
+              </tr>
+            </thead>
+            <tbody id="text-sm">
+              <tr class="text-left border-b border-[#d1d1d1] relative">
+                <td class="py-4">The Meditations</td>
+                <td class="py-4">Marcus Aurelius</td>
+                <td class="py-4"><button class="border border-[#d1d1d1] rounded-md px-8 py-2">READ</button></td>
+                <td class="absolute top-5 right-5">
+                  <button class="px-8 py-2">
+                    <span class="flex flex-row items-center">
+                      <i data-feather="trash-2" class="w-5 h-5 text-[#bebebe] hover:text-[#000] transition duration-300"></i>
+                    </span>
+                  </button>
+                </td>
+              </tr>
+              <tr class="text-left border-b border-[#d1d1d1] relative">
+                <td class="py-4">Ego Is The Enemy</td>
+                <td class="py-4">Ryan Holiday</td>
+                <td class="py-4"><button class="border border-[#d1d1d1] rounded-md px-8 py-2">NOT READ</button></td>
+                <td class="absolute top-5 right-5">
+                  <button class="px-8 py-2">
+                    <span class="flex flex-row items-center">
+                      <i data-feather="trash-2" class="w-5 h-5 text-[#bebebe] hover:text-[#000] transition duration-300"></i>
+                    </span>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
+
     </main>
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+</body>
 </html>
