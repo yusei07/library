@@ -2,13 +2,14 @@
 <html lang="en" class="scroll-smooth">
   <head>
     <title>Yu's Library</title>
+    <link rel="icon" type="image/x-icon" href="./assets/vogue-icon.ico"/>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.css" />
-    <link rel="stylesheet" href="./dist/style.css">
+    <link href="./dist/style.css" rel="stylesheet">
     <script src="script.js" defer></script>
   </head>
 
@@ -20,40 +21,41 @@
 
       <!-- main page -->
       <div class="flex flex-col items-center justify-center h-full w-9/12 relative mt-16">
-        <!-- dark/light mode toggle -->
         <div class="absolute text-6xl top-3 right-0">
           <div class="flex justify-center">
             <input type="checkbox" id="toggle" class="hidden"/>
             <label for="toggle">
-              <div class="w-11 h-6 bg-black dark:bg-[#f5f5f7] rounded-full flex items-center p-1 cursor-pointer">
-                <div class="toggle-circle w-4 h-4 bg-[#f5f5f7] dark:bg-black rounded-full transition duration-300 ease-in-out"></div> <!-- toggle circle here is a custom class/not exist in tailwind -->
+              <div class="w-11 h-6 bg-[#232323] dark:bg-[#eee] rounded-full flex items-center p-1 cursor-pointer">
+                <div class="toggle-circle w-4 h-4 bg-[#eee] dark:bg-[#232323] rounded-full transition duration-300 ease-in-out"></div> <!-- toggle circle here is a custom class/not exist in tailwind -->
               </div>
             </label>
           </div>
         </div>
 
-        <header class="flex flex-col gap-4 h-full mb-10">
-          <h1 class="flex flex-row items-center font-semibold text-[#232323] dark:text-white text-4xl"><span class="sm:mr-4 md:mr-0"><img src="assets/lib-icon.png" alt="library-icon" class="object-cover w-28 h-28"></span>・ Yusei's Library  ⸝ ⸝</h1>
+        <header class="flex flex-col gap-6 h-full mb-8">
+          <h1 class="flex flex-row items-center font-semibold text-[#232323] dark:text-white text-4xl"><span class="rounded-md sm:mr-4 md:mr-0"><img src="assets/lib-icon.png" alt="library-icon" class="object-cover w-28 h-28"></span>・ Yusei's Library  ⸝ ⸝</h1>
           <p class="">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet ratione debitis nesciunt. Architecto assumenda quaerat maiores ex aperiam dolorum itaque nobis, consectetur iure atque error similique eos ad nemo voluptatem!</p>
         </header>
 
-        <form action="" class="grid grid-cols-[1fr_1fr_0.75fr] grid-rows-2 gap-x-6 w-full h-full">
-          <div class="flex flex-col gap-2">
-            <label for="name" class="font-semibold">Book</label>
-            <input type="text" class="h-8 w-full pl-3 border border-[#d1d1d1] rounded-md bg-transparent focus:outline-black" id="name">
+        <form action="" class="flex flex-col justify-center gap-2 w-full h-full">
+          <div class="grid grid-cols-[1fr_1fr_0.75fr] gap-6 w-full">
+            <div class="flex flex-col gap-2">
+              <label for="name" class="font-semibold">Book</label>
+              <input type="text" class="h-8 w-full pl-3 border border-[#d1d1d1] rounded-md bg-transparent focus:ring-0" id="name">
+            </div>
+            <div class="flex flex-col gap-2">
+              <label for="author" class="font-semibold">Author</label>
+              <input type="text" class="h-8 w-full pl-3 border border-[#d1d1d1] rounded-md bg-transparent focus:ring-0" id="author">
+            </div>
+            <div class="flex flex-col gap-2">
+              <label for="status" class="font-semibold">Status</label>
+              <select name="status" class="w-full pl-3 border border-[#d1d1d1] rounded-md bg-transparent focus:ring-0" id="status">
+                <option value="read">Read</option>
+                <option value="not read">Not read</option>
+              </select>
+            </div>
           </div>
-          <div class="flex flex-col gap-2">
-            <label for="author" class="font-semibold">Author</label>
-            <input type="text" class="h-8 w-full pl-3 border border-[#d1d1d1] rounded-md bg-transparent focus:outline-black" id="author">
-          </div>
-          <div class="flex flex-col gap-2">
-            <label for="status" class="font-semibold">Status</label>
-            <select name="status" class="h-8 w-full pl-3 border border-[#d1d1d1] rounded-md bg-transparent focus:outline-black" id="status">
-              <option value="read">Read</option>
-              <option value="not read">Not read</option>
-            </select>
-          </div>
-          <input type="submit" value="SUBMIT" class="h-fit w-fit border-none rounded-md text-white bg-[#d1d1d1] hover:bg-[#232323] px-8 py-2 transition duration-300">
+          <input type="submit" value="Submit" class="h-fit w-fit border-none rounded-md text-[#eee] bg-[#d1d1d1] hover:bg-[#232323] dark:hover:text-[#232323] dark:hover:bg-[#eee] px-8 py-2 transition duration-300">
         </form>
 
         <div class="w-full h-full">
@@ -70,23 +72,23 @@
               <tr class="text-left border-b border-[#d1d1d1] relative">
                 <td class="py-4">The Meditations</td>
                 <td class="py-4">Marcus Aurelius</td>
-                <td class="py-4"><button class="border border-[#d1d1d1] rounded-md px-8 py-2">READ</button></td>
+                <td class="py-4"><button class="border border-[#d1d1d1] rounded-md px-8 py-2">Read</button></td>
                 <td class="absolute top-5 right-5">
                   <button class="px-8 py-2">
                     <span class="flex flex-row items-center">
-                      <i data-feather="trash-2" class="w-5 h-5 text-[#bebebe] hover:text-[#000] transition duration-300"></i>
+                      <i data-feather="trash-2" class="w-5 h-5 text-[#bebebe] hover:text-[#232323] dark:hover:text-[#eee] transition duration-300"></i>
                     </span>
                   </button>
                 </td>
               </tr>
               <tr class="text-left border-b border-[#d1d1d1] relative">
-                <td class="py-4">Ego Is The Enemy</td>
+                <td class="py-4">Ego Is the Enemy</td>
                 <td class="py-4">Ryan Holiday</td>
-                <td class="py-4"><button class="border border-[#d1d1d1] rounded-md px-8 py-2">NOT READ</button></td>
+                <td class="py-4"><button class="border border-[#d1d1d1] rounded-md px-8 py-2">Not Read</button></td>
                 <td class="absolute top-5 right-5">
                   <button class="px-8 py-2">
                     <span class="flex flex-row items-center">
-                      <i data-feather="trash-2" class="w-5 h-5 text-[#bebebe] hover:text-[#000] transition duration-300"></i>
+                      <i data-feather="trash-2" class="w-5 h-5 text-[#bebebe] hover:text-[#232323] dark:hover:text-[#eee] transition duration-300"></i>
                     </span>
                   </button>
                 </td>
