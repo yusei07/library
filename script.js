@@ -92,7 +92,7 @@ function render() {
         <td class="py-4"><button class="status-btn border border-[#d1d1d1] rounded-md px-6 py-2">${book.status}</button></td>
         <! -- remove btn -->
         <td class="static md:absolute top-5 right-5">
-          <button class="del-btn flex flex-row justify-center items-center gap-2 pl-5 pr-6 py-2 text-[#bebebe] hover:text-[#eee] dark:hover:text-[#232323] bg-[#232323] dark:bg-white rounded-md">
+          <button class="del-btn flex flex-row justify-center items-center gap-2 pl-4 pr-6 py-2 text-[#bebebe] hover:text-[#eee] dark:hover:text-[#232323] bg-[#232323] dark:bg-white rounded-md">
             <i data-feather="trash-2" class="w-5 h-5  transition duration-300"></i>
             <span class="">Delete</span>
           </button>
